@@ -9,21 +9,21 @@ const screenVariants = {
 }
 
 const defaultPhrases = [
-  { id: 1, text: 'Our chef takes food quality very seriously.', category: 'Industry', enabled: true },
-  { id: 2, text: 'Here is a 10% Zomato promo code for your next order.', category: 'Zomato', enabled: true },
+  //{ id: 1, text: 'Our chef takes food quality very seriously.', category: 'Industry', enabled: true },
+  { id: 2, text: 'Here is a 10% Zomato PROMOCODE for your next order.', category: 'Zomato', enabled: true },
   { id: 3, text: "We've alerted our Swiggy delivery partners about this.", category: 'Swiggy', enabled: false },
   { id: 4, text: 'Sorry for the cold food, the Bangalore traffic is tough!', category: 'Regional', enabled: true },
-  { id: 5, text: 'We truly value your feedback and are working to improve.', category: 'Apology', enabled: false },
-  { id: 6, text: 'Your satisfaction means the world to us.', category: 'General', enabled: true },
+  // { id: 5, text: 'We truly value your feedback and are working to improve.', category: 'Apology', enabled: false },
+  // { id: 6, text: 'Your satisfaction means the world to us.', category: 'General', enabled: true },
 ]
 
 const categoryColors = {
-  Industry: { bg: 'bg-amber-500/15', text: 'text-amber-400', border: 'border-amber-500/20' },
+  // Industry: { bg: 'bg-amber-500/15', text: 'text-amber-400', border: 'border-amber-500/20' },
   Zomato: { bg: 'bg-red-500/15', text: 'text-red-400', border: 'border-red-500/20' },
   Swiggy: { bg: 'bg-orange-500/15', text: 'text-orange-400', border: 'border-orange-500/20' },
   Regional: { bg: 'bg-teal-500/15', text: 'text-teal-400', border: 'border-teal-500/20' },
-  Apology: { bg: 'bg-rose-500/15', text: 'text-rose-400', border: 'border-rose-500/20' },
-  General: { bg: 'bg-blue-500/15', text: 'text-blue-400', border: 'border-blue-500/20' },
+  //  Apology: { bg: 'bg-rose-500/15', text: 'text-rose-400', border: 'border-rose-500/20' },
+  // General: { bg: 'bg-blue-500/15', text: 'text-blue-400', border: 'border-blue-500/20' },
   Custom: { bg: 'bg-purple-500/15', text: 'text-purple-400', border: 'border-purple-500/20' },
 }
 
@@ -79,7 +79,7 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
         >
           <Sparkles className="w-7 h-7 text-white" />
         </motion.div>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
         >
           Customize Your Brand Voice
         </motion.h1>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -156,21 +156,19 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + index * 0.06 }}
-              className={`relative group rounded-2xl p-3.5 transition-all duration-300 ${
-                phrase.enabled
+              className={`relative group rounded-2xl p-3.5 transition-all duration-300 ${phrase.enabled
                   ? 'bg-white/[0.06] border border-white/10'
                   : 'bg-white/[0.02] border border-white/5'
-              }`}
+                }`}
             >
               <div className="flex items-start gap-3">
                 {/* Toggle */}
                 <button
                   onClick={() => togglePhrase(phrase.id)}
-                  className={`mt-0.5 w-[42px] h-[24px] rounded-full flex-shrink-0 relative transition-all duration-300 ${
-                    phrase.enabled
+                  className={`mt-0.5 w-[42px] h-[24px] rounded-full flex-shrink-0 relative transition-all duration-300 ${phrase.enabled
                       ? 'bg-gradient-to-r from-brand-primary to-brand-accent shadow-md shadow-brand-primary/20'
                       : 'bg-white/10'
-                  }`}
+                    }`}
                 >
                   <motion.div
                     layout
@@ -187,9 +185,8 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
                       {phrase.category}
                     </span>
                   </div>
-                  <p className={`text-[13px] leading-relaxed transition-colors ${
-                    phrase.enabled ? 'text-white/90' : 'text-white/40'
-                  }`}>
+                  <p className={`text-[13px] leading-relaxed transition-colors ${phrase.enabled ? 'text-white/90' : 'text-white/40'
+                    }`}>
                     {phrase.text}
                   </p>
                 </div>
