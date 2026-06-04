@@ -143,7 +143,7 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
             className="w-full rounded-2xl border-2 border-dashed border-white/10 hover:border-brand-primary/30 p-4 flex items-center justify-center gap-2 text-white/40 hover:text-brand-accent transition-all group"
           >
             <Plus className="w-4 h-4 group-hover:scale-110 transition-transform" />
-            <span className="text-[13px] font-medium">Add your own custom phrase</span>
+            <span className="text-[13px] font-medium">custom phrase</span>
           </motion.button>
         )}
 
