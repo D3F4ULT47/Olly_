@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #0B132B;
+  --color-navy-900: #0F1A3A;
+  --color-navy-800: #1C2541;
+  --color-navy-700: #253153;
+  --color-navy-600: #2E3D65;
+  --color-navy-500: #3A4D7A;
+  --color-brand-primary: #6C63FF;
+  --color-brand-secondary: #7B68EE;
+  --color-brand-accent: #A78BFA;
+  --color-brand-glow: #8B5CF6;
+  --color-success-green: #10B981;
+  --color-success-glow: #34D399;
+  --color-warning-orange: #F59E0B;
+  --color-error-red: #EF4444;
+  --color-zomato-red: #E23744;
+  --color-swiggy-orange: #FC8019;
+  --color-chip-bg: rgba(255, 255, 255, 0.08);
+  --color-chip-border: rgba(255, 255, 255, 0.12);
+  --color-card-dark: #1C2541;
+  --color-card-light: #FFFFFF;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+  background: #050a18;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for mobile feel */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+/* Voice animation bars */
+@keyframes voiceBar1 {
+  0%, 100% { height: 12px; }
+  25% { height: 36px; }
+  50% { height: 20px; }
+  75% { height: 44px; }
+}
+
+@keyframes voiceBar2 {
+  0%, 100% { height: 20px; }
+  20% { height: 48px; }
+  45% { height: 16px; }
+  70% { height: 40px; }
+}
+
+@keyframes voiceBar3 {
+  0%, 100% { height: 28px; }
+  15% { height: 52px; }
+  40% { height: 24px; }
+  65% { height: 56px; }
+  85% { height: 32px; }
+}
+
+@keyframes voiceBar4 {
+  0%, 100% { height: 16px; }
+  30% { height: 44px; }
+  55% { height: 20px; }
+  80% { height: 36px; }
+}
+
+@keyframes voiceBar5 {
+  0%, 100% { height: 24px; }
+  25% { height: 40px; }
+  50% { height: 28px; }
+  75% { height: 48px; }
+}
+
+.voice-bar {
+  width: 5px;
+  border-radius: 100px;
+  background: linear-gradient(180deg, #A78BFA 0%, #6C63FF 50%, #818CF8 100%);
+  transition: height 0.1s ease;
+}
+
+.voice-bar:nth-child(1) { animation: voiceBar1 1.2s ease-in-out infinite; }
+.voice-bar:nth-child(2) { animation: voiceBar2 1.0s ease-in-out infinite 0.1s; }
+.voice-bar:nth-child(3) { animation: voiceBar3 0.9s ease-in-out infinite 0.05s; }
+.voice-bar:nth-child(4) { animation: voiceBar4 1.1s ease-in-out infinite 0.15s; }
+.voice-bar:nth-child(5) { animation: voiceBar5 1.3s ease-in-out infinite 0.08s; }
+
+/* Chip glow on hover */
+.chip-glow:hover {
+  box-shadow: 0 0 16px rgba(108, 99, 255, 0.3);
+}
+
+/* Pulse animation for mic button */
+@keyframes micPulse {
+  0% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(108, 99, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+}
+
+.mic-pulse {
+  animation: micPulse 2s infinite;
+}
+
+/* Fix 5: Selection-mode mic glow — in-place listening indicator */
+@keyframes selectionMicGlow {
+  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.5), 0 0 12px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(139, 92, 246, 0.15), 0 0 24px rgba(139, 92, 246, 0.4); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.5), 0 0 12px rgba(139, 92, 246, 0.3); }
+}
+
+.selection-mic-glow {
+  animation: selectionMicGlow 1.2s ease-in-out infinite;
+}
+
+/* Stars background */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite var(--delay);
+}
+
+/* Floating elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Text selection highlight for inline editing */
+.text-highlight {
+  background: rgba(250, 204, 21, 0.3);
+  border-radius: 2px;
+  padding: 1px 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.text-highlight:hover {
+  background: rgba(250, 204, 21, 0.5);
+}
+
+/* Smooth chip scroll */
+.chip-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chip-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(28, 37, 65, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient border effect */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.4), rgba(167, 139, 250, 0.1));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
