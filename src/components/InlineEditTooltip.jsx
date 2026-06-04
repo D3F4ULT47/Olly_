@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Zap, Globe, X } from 'lucide-react'
 
 const lineActions = [
-  // { id: 'enhance', label: 'Enhance', icon: Zap, color: 'text-amber-400' },
+  { id: 'enhance', label: 'Enhance', icon: Zap, color: 'text-amber-400' },
   { id: 'translate', label: 'Translate', icon: Globe, color: 'text-blue-400' },
 ]
 
