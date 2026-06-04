@@ -86,7 +86,7 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
           transition={{ delay: 0.3 }}
           className="text-[22px] font-bold text-white leading-tight mb-2"
         >
-          Customize Your Brand Voice
+          Let Olly Know About Your Business
         </motion.h1>
 
         <motion.p
@@ -98,7 +98,7 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
           Olly noticed you're a restaurant on{' '}
           <span className="text-zomato-red font-medium">Zomato</span> &{' '}
           <span className="text-swiggy-orange font-medium">Swiggy</span>.
-          Here are some phrases we recommend adding to your AI's vocabulary.
+          in Bengalore city.
         </motion.p>
       </div>
 
@@ -157,8 +157,8 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + index * 0.06 }}
               className={`relative group rounded-2xl p-3.5 transition-all duration-300 ${phrase.enabled
-                  ? 'bg-white/[0.06] border border-white/10'
-                  : 'bg-white/[0.02] border border-white/5'
+                ? 'bg-white/[0.06] border border-white/10'
+                : 'bg-white/[0.02] border border-white/5'
                 }`}
             >
               <div className="flex items-start gap-3">
@@ -166,8 +166,8 @@ export default function PhrasesOnboarding({ onContinue, onSkip, onSavePhrases })
                 <button
                   onClick={() => togglePhrase(phrase.id)}
                   className={`mt-0.5 w-[42px] h-[24px] rounded-full flex-shrink-0 relative transition-all duration-300 ${phrase.enabled
-                      ? 'bg-gradient-to-r from-brand-primary to-brand-accent shadow-md shadow-brand-primary/20'
-                      : 'bg-white/10'
+                    ? 'bg-gradient-to-r from-brand-primary to-brand-accent shadow-md shadow-brand-primary/20'
+                    : 'bg-white/10'
                     }`}
                 >
                   <motion.div
